@@ -17,6 +17,14 @@ class SignInPage extends StatelessWidget {
     }
   }
 
+  Future<void> _signInWithGoogle() async {
+    try {
+      await auth.signInWithGoogle();
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,61 +40,63 @@ class SignInPage extends StatelessWidget {
   Widget _buildContent() {
     return Padding(
       padding: EdgeInsets.all(16.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Text(
-            'Sign in',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.w600,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Text(
+              'Sign in',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 48.0,
-          ),
-          SizedBox(height: 8.0),
-          SocialSignInButton(
-            assetName: 'images/google-logo.png',
-            text: 'Sign in with Google',
-            textColor: Colors.black87,
-            color: Colors.white,
-            onPressed: () {},
-          ),
-          SizedBox(height: 8.0),
-          SocialSignInButton(
-            assetName: 'images/facebook-logo.png',
-            text: 'Sign in with Facebook',
-            textColor: Colors.white,
-            color: Color(0xFF334D92),
-            onPressed: () {},
-          ),
-          SizedBox(height: 8.0),
-          SignInButton(
-            text: 'Sign in with email',
-            textColor: Colors.white,
-            color: Colors.teal[700],
-            onPressed: () {},
-          ),
-          SizedBox(height: 8.0),
-          Text(
-            'or',
-            style: TextStyle(
-              fontSize: 14.0,
-              color: Colors.black87,
+            SizedBox(
+              height: 48.0,
             ),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 8.0),
-          SignInButton(
-            text: 'Go anonymous',
-            textColor: Colors.black,
-            color: Colors.lime[300],
-            onPressed: _signInAnonymously,
-          ),
-        ],
+            SizedBox(height: 8.0),
+            SocialSignInButton(
+              assetName: 'images/google-logo.png',
+              text: 'Sign in with Google',
+              textColor: Colors.black87,
+              color: Colors.white,
+              onPressed: _signInWithGoogle,
+            ),
+            SizedBox(height: 8.0),
+            SocialSignInButton(
+              assetName: 'images/facebook-logo.png',
+              text: 'Sign in with Facebook',
+              textColor: Colors.white,
+              color: Color(0xFF334D92),
+              onPressed: () {},
+            ),
+            SizedBox(height: 8.0),
+            SignInButton(
+              text: 'Sign in with email',
+              textColor: Colors.white,
+              color: Colors.teal[700],
+              onPressed: () {},
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              'or',
+              style: TextStyle(
+                fontSize: 14.0,
+                color: Colors.black87,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 8.0),
+            SignInButton(
+              text: 'Go anonymous',
+              textColor: Colors.black,
+              color: Colors.lime[300],
+              onPressed: _signInAnonymously,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -14,14 +14,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "1035423933435-g3o1mot8s60u5mo4c55jepku27l6fbvv.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.matuageorge.time_tracker_flutter_course",
-            "certificate_hash": "0a3b452b53213c493d3ea21dea45a0944fa55275"
-          }
-        },
-        {
           "client_id": "1035423933435-jvur3l167qc65jgh9bfc444j7056tdki.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -37,6 +29,13 @@
             {
               "client_id": "1035423933435-jvur3l167qc65jgh9bfc444j7056tdki.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1035423933435-k6iamv092caqjus0chnqne422uoslagq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.matuageorge.timeTrackerFlutterCourse"
+              }
             }
           ]
         }
